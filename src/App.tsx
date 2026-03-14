@@ -125,8 +125,8 @@ const PINNED_REPOS = ['Saint-Discovery', 'catholic-word', 'countdown-timer'];
 const CONTACT_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(PROFILE.email)}`;
 
 const Navbar = () => (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
-        <div className="glass px-6 py-3 rounded-full flex items-center gap-8 text-sm font-medium">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-3 sm:p-6">
+        <div className="glass max-w-full overflow-x-auto no-scrollbar whitespace-nowrap px-4 sm:px-6 py-2.5 sm:py-3 rounded-full flex items-center gap-4 sm:gap-8 text-xs sm:text-sm font-medium">
             <a href="#home" className="hover:text-amber-300 transition-colors">Home</a>
             <a href="#github" className="hover:text-amber-300 transition-colors">GitHub</a>
             <a href="#projects" className="hover:text-amber-300 transition-colors">Projects</a>
@@ -136,22 +136,22 @@ const Navbar = () => (
 );
 
 const Hero = () => (
-    <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
+    <section id="home" className="min-h-[92svh] sm:min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-24 sm:pt-20">
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl"
+            className="text-center max-w-3xl w-full"
         >
-            <span className="text-amber-300 font-mono text-sm tracking-widest uppercase mb-4 block">{PROFILE.title}</span>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
+            <span className="text-amber-300 font-mono text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4 block">{PROFILE.title}</span>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-5 sm:mb-6 leading-tight">
                 {PROFILE.name}: <span className="gradient-text">{PROFILE.headline}</span>
             </h1>
-            <p className="text-zinc-400 text-lg md:text-xl mb-10 leading-relaxed">{PROFILE.about}</p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <p className="text-zinc-400 text-base sm:text-lg md:text-xl mb-8 sm:mb-10 leading-relaxed">{PROFILE.about}</p>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-sm sm:max-w-none mx-auto">
                 <a
                     href="#projects"
-                    className="bg-amber-400 hover:bg-amber-500 text-black font-bold px-8 py-4 rounded-xl transition-all flex items-center gap-2"
+                    className="bg-amber-400 hover:bg-amber-500 text-black font-bold px-8 py-3.5 sm:py-4 rounded-xl transition-all flex items-center justify-center gap-2"
                 >
                     View Projects <ExternalLink size={18} />
                 </a>
@@ -159,7 +159,7 @@ const Hero = () => (
                     href={CONTACT_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glass hover:bg-white/10 px-8 py-4 rounded-xl transition-all flex items-center gap-2"
+                    className="glass hover:bg-white/10 px-8 py-3.5 sm:py-4 rounded-xl transition-all flex items-center justify-center gap-2"
                 >
                     Contact Me <Mail size={18} />
                 </a>
@@ -198,20 +198,20 @@ const GitHubSection = () => {
     }, []);
 
     return (
-        <section id="github" className="py-24 px-6 max-w-7xl mx-auto">
-            <div className="flex items-center gap-4 mb-12">
+        <section id="github" className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
+            <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
                 <div className="p-3 bg-white/5 rounded-2xl">
                     <Github className="text-amber-300" size={32} />
                 </div>
                 <div>
-                    <h2 className="text-3xl font-bold">GitHub Repositories</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold">GitHub Repositories</h2>
                     <p className="text-zinc-500">Pinned repositories for @{PROFILE.githubUsername}</p>
                 </div>
             </div>
 
             {error ? <p className="text-rose-400 mb-6">{error}</p> : null}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {loading
                     ? [...Array(3)].map((_, i) => (
                         <div key={i} className="h-48 rounded-2xl bg-white/5 animate-pulse border border-white/5" />
@@ -223,7 +223,7 @@ const GitHubSection = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ y: -5 }}
-                            className="group p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-amber-400/50 transition-all flex flex-col justify-between"
+                            className="group p-5 sm:p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-amber-400/50 transition-all flex flex-col justify-between"
                         >
                             <div>
                                 <div className="flex items-center justify-between mb-4">
@@ -283,19 +283,19 @@ const ProjectsSection = () => {
     }, []);
 
     return (
-        <section id="projects" className="py-24 px-6 bg-white/[0.02]">
+        <section id="projects" className="py-16 sm:py-24 px-4 sm:px-6 bg-white/[0.02]">
             <div className="max-w-7xl mx-auto">
-                <div className="flex items-center gap-4 mb-12">
+                <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
                     <div className="p-3 bg-white/5 rounded-2xl">
                         <Globe className="text-amber-300" size={32} />
                     </div>
                     <div>
-                        <h2 className="text-3xl font-bold">Featured Projects</h2>
+                        <h2 className="text-2xl sm:text-3xl font-bold">Featured Projects</h2>
                         <p className="text-zinc-500">Recent web products I designed and shipped</p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
                     {PROJECTS.map((project, i) => {
                         const tags = project.repoName ? repoLanguages[project.repoName] || project.tags : project.tags;
 
@@ -315,7 +315,7 @@ const ProjectsSection = () => {
                                         referrerPolicy="no-referrer"
                                     />
                                 </div>
-                                <div className="p-8">
+                                <div className="p-6 sm:p-8">
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {tags.length > 0 ? (
                                             tags.map((tag) => (
@@ -332,7 +332,7 @@ const ProjectsSection = () => {
                                             </span>
                                         )}
                                     </div>
-                                    <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                                    <h3 className="text-xl sm:text-2xl font-bold mb-3">{project.title}</h3>
                                     <p className="text-zinc-400 mb-6 leading-relaxed">{project.description}</p>
                                     <a
                                         href={project.url}
@@ -353,10 +353,10 @@ const ProjectsSection = () => {
 };
 
 const ResumeSection = () => (
-    <section id="resume" className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+    <section id="resume" className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 sm:gap-16">
             <div className="lg:col-span-1">
-                <div className="sticky top-32">
+                <div className="lg:sticky lg:top-32">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="p-3 bg-white/5 rounded-2xl">
                             <FileText className="text-amber-300" size={32} />
@@ -370,7 +370,7 @@ const ResumeSection = () => (
                         href={PROFILE.resumeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full glass hover:bg-white/10 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
+                        className="w-full glass hover:bg-white/10 py-3.5 sm:py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
                     >
                         Download Resume <FileText size={18} />
                     </a>
@@ -380,12 +380,12 @@ const ResumeSection = () => (
             <div className="lg:col-span-2 space-y-12">
                 <div>
                     <h3 className="text-sm font-mono text-amber-300 uppercase tracking-widest mb-8">Experience</h3>
-                    <div className="space-y-8">
+                    <div className="space-y-6 sm:space-y-8">
                         {EXPERIENCE.map((exp) => (
                             <div key={`${exp.company}-${exp.role}`} className="relative pl-8 border-l border-white/10">
                                 <div className="absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full bg-amber-300 shadow-[0_0_10px_rgba(201,167,96,0.45)]" />
                                 <span className="text-xs text-zinc-500 font-mono mb-1 block">{exp.period}</span>
-                                <h4 className="text-xl font-bold mb-1">{exp.role}</h4>
+                                <h4 className="text-lg sm:text-xl font-bold mb-1">{exp.role}</h4>
                                 <p className="text-amber-300/80 text-sm mb-3">{exp.company}</p>
                                 <p className="text-zinc-400">{exp.desc}</p>
                             </div>
@@ -395,9 +395,9 @@ const ResumeSection = () => (
 
                 <div>
                     <h3 className="text-sm font-mono text-amber-300 uppercase tracking-widest mb-8">Skills</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                         {SKILLS.map((skill) => (
-                            <div key={skill} className="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3">
+                            <div key={skill} className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3">
                                 <Terminal size={16} className="text-amber-300" />
                                 <span className="text-sm font-medium">{skill}</span>
                             </div>
@@ -410,7 +410,7 @@ const ResumeSection = () => (
 );
 
 const Footer = () => (
-    <footer className="py-12 px-6 border-t border-white/5 text-center">
+    <footer className="py-10 sm:py-12 px-4 sm:px-6 border-t border-white/5 text-center">
         <p className="text-zinc-500 text-sm">&copy; {new Date().getFullYear()} {PROFILE.name}.</p>
     </footer>
 );
