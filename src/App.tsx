@@ -411,7 +411,7 @@ const ResumeSection = () => (
 
 const Footer = () => (
     <footer className="py-12 px-6 border-t border-white/5 text-center">
-        <p className="text-zinc-500 text-sm">&copy; {new Date().getFullYear()} {PROFILE.name}. Built with React + Tailwind.</p>
+        <p className="text-zinc-500 text-sm">&copy; {new Date().getFullYear()} {PROFILE.name}.</p>
     </footer>
 );
 
