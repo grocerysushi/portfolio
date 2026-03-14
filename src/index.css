@@ -4,10 +4,10 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-brand-bg: #0a0a0a;
-  --color-brand-card: #141414;
-  --color-brand-border: rgba(255, 255, 255, 0.1);
-  --color-brand-accent: #10b981; /* Emerald */
+  --color-brand-bg: #0b122f;
+  --color-brand-card: #111c45;
+  --color-brand-border: rgba(201, 167, 96, 0.24);
+  --color-brand-accent: #c9a760; /* Navy Gold */
 }
 
 @layer base {
@@ -21,5 +21,5 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-blue-300;
 }

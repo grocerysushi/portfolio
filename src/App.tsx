@@ -127,10 +127,10 @@ const CONTACT_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURICo
 const Navbar = () => (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
         <div className="glass px-6 py-3 rounded-full flex items-center gap-8 text-sm font-medium">
-            <a href="#home" className="hover:text-emerald-400 transition-colors">Home</a>
-            <a href="#github" className="hover:text-emerald-400 transition-colors">GitHub</a>
-            <a href="#projects" className="hover:text-emerald-400 transition-colors">Projects</a>
-            <a href="#resume" className="hover:text-emerald-400 transition-colors">Resume</a>
+            <a href="#home" className="hover:text-amber-300 transition-colors">Home</a>
+            <a href="#github" className="hover:text-amber-300 transition-colors">GitHub</a>
+            <a href="#projects" className="hover:text-amber-300 transition-colors">Projects</a>
+            <a href="#resume" className="hover:text-amber-300 transition-colors">Resume</a>
         </div>
     </nav>
 );
@@ -143,7 +143,7 @@ const Hero = () => (
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl"
         >
-            <span className="text-emerald-400 font-mono text-sm tracking-widest uppercase mb-4 block">{PROFILE.title}</span>
+            <span className="text-amber-300 font-mono text-sm tracking-widest uppercase mb-4 block">{PROFILE.title}</span>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
                 {PROFILE.name}: <span className="gradient-text">{PROFILE.headline}</span>
             </h1>
@@ -151,7 +151,7 @@ const Hero = () => (
             <div className="flex flex-wrap justify-center gap-4">
                 <a
                     href="#projects"
-                    className="bg-emerald-500 hover:bg-emerald-600 text-black font-bold px-8 py-4 rounded-xl transition-all flex items-center gap-2"
+                    className="bg-amber-400 hover:bg-amber-500 text-black font-bold px-8 py-4 rounded-xl transition-all flex items-center gap-2"
                 >
                     View Projects <ExternalLink size={18} />
                 </a>
@@ -201,7 +201,7 @@ const GitHubSection = () => {
         <section id="github" className="py-24 px-6 max-w-7xl mx-auto">
             <div className="flex items-center gap-4 mb-12">
                 <div className="p-3 bg-white/5 rounded-2xl">
-                    <Github className="text-emerald-400" size={32} />
+                    <Github className="text-amber-300" size={32} />
                 </div>
                 <div>
                     <h2 className="text-3xl font-bold">GitHub Repositories</h2>
@@ -223,11 +223,11 @@ const GitHubSection = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ y: -5 }}
-                            className="group p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-emerald-500/50 transition-all flex flex-col justify-between"
+                            className="group p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-amber-400/50 transition-all flex flex-col justify-between"
                         >
                             <div>
                                 <div className="flex items-center justify-between mb-4">
-                                    <Code2 size={20} className="text-emerald-400" />
+                                    <Code2 size={20} className="text-amber-300" />
                                     <div className="flex items-center gap-3 text-xs text-zinc-500">
                                         <span className="flex items-center gap-1">
                                             <Star size={14} /> {repo.stargazers_count.toLocaleString()}
@@ -237,11 +237,11 @@ const GitHubSection = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">{repo.name}</h3>
+                                <h3 className="text-xl font-bold mb-2 group-hover:text-amber-300 transition-colors">{repo.name}</h3>
                                 <p className="text-zinc-500 text-sm mb-4 min-h-10">{repo.description || 'No description provided.'}</p>
                             </div>
-                            <div className="flex items-center gap-2 text-xs font-mono text-emerald-400/70">
-                                <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                            <div className="flex items-center gap-2 text-xs font-mono text-amber-300/70">
+                                <div className="w-2 h-2 rounded-full bg-amber-300" />
                                 {repo.language || 'Unspecified'}
                             </div>
                         </motion.a>
@@ -287,7 +287,7 @@ const ProjectsSection = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="flex items-center gap-4 mb-12">
                     <div className="p-3 bg-white/5 rounded-2xl">
-                        <Globe className="text-emerald-400" size={32} />
+                        <Globe className="text-amber-300" size={32} />
                     </div>
                     <div>
                         <h2 className="text-3xl font-bold">Featured Projects</h2>
@@ -338,7 +338,7 @@ const ProjectsSection = () => {
                                         href={project.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-emerald-400 font-bold hover:gap-3 transition-all"
+                                        className="inline-flex items-center gap-2 text-amber-300 font-bold hover:gap-3 transition-all"
                                     >
                                         Visit Project <ExternalLink size={18} />
                                     </a>
@@ -359,7 +359,7 @@ const ResumeSection = () => (
                 <div className="sticky top-32">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="p-3 bg-white/5 rounded-2xl">
-                            <FileText className="text-emerald-400" size={32} />
+                            <FileText className="text-amber-300" size={32} />
                         </div>
                         <h2 className="text-3xl font-bold">Resume</h2>
                     </div>
@@ -379,14 +379,14 @@ const ResumeSection = () => (
 
             <div className="lg:col-span-2 space-y-12">
                 <div>
-                    <h3 className="text-sm font-mono text-emerald-400 uppercase tracking-widest mb-8">Experience</h3>
+                    <h3 className="text-sm font-mono text-amber-300 uppercase tracking-widest mb-8">Experience</h3>
                     <div className="space-y-8">
                         {EXPERIENCE.map((exp) => (
                             <div key={`${exp.company}-${exp.role}`} className="relative pl-8 border-l border-white/10">
-                                <div className="absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
+                                <div className="absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full bg-amber-300 shadow-[0_0_10px_rgba(201,167,96,0.45)]" />
                                 <span className="text-xs text-zinc-500 font-mono mb-1 block">{exp.period}</span>
                                 <h4 className="text-xl font-bold mb-1">{exp.role}</h4>
-                                <p className="text-emerald-400/80 text-sm mb-3">{exp.company}</p>
+                                <p className="text-amber-300/80 text-sm mb-3">{exp.company}</p>
                                 <p className="text-zinc-400">{exp.desc}</p>
                             </div>
                         ))}
@@ -394,11 +394,11 @@ const ResumeSection = () => (
                 </div>
 
                 <div>
-                    <h3 className="text-sm font-mono text-emerald-400 uppercase tracking-widest mb-8">Skills</h3>
+                    <h3 className="text-sm font-mono text-amber-300 uppercase tracking-widest mb-8">Skills</h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                         {SKILLS.map((skill) => (
                             <div key={skill} className="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3">
-                                <Terminal size={16} className="text-emerald-400" />
+                                <Terminal size={16} className="text-amber-300" />
                                 <span className="text-sm font-medium">{skill}</span>
                             </div>
                         ))}
@@ -411,7 +411,7 @@ const ResumeSection = () => (
 
 const Footer = () => (
     <footer className="py-12 px-6 border-t border-white/5 text-center">
-        <p className="text-zinc-500 text-sm">© {new Date().getFullYear()} {PROFILE.name}. Built with React + Tailwind.</p>
+        <p className="text-zinc-500 text-sm">&copy; {new Date().getFullYear()} {PROFILE.name}. Built with React + Tailwind.</p>
     </footer>
 );
 
@@ -426,8 +426,8 @@ export default function App() {
             <Footer />
 
             <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-500/10 blur-[120px] rounded-full" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-500/10 blur-[120px] rounded-full" />
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-400/10 blur-[120px] rounded-full" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-700/20 blur-[120px] rounded-full" />
             </div>
         </div>
     );
